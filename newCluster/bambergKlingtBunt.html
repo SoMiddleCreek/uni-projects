@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bamberg klingt bunt</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"
+    integrity="sha512-gwSDP1iEKl4KG0wi3N89RAJU91s78jb/TGC6lsbF5IyR2c19Rn7Jl1icK4K4kUiJNwQUEPI7o98T+GJVWNuvIQ=="
+    crossorigin="anonymous" referrerpolicy="same-origin"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="cluster.js" defer></script>
+
+
+
+  <!--  Titel -->
+  <section id="titel" class="hidden text_item" style="background: url('titelbild.jpg'); background-position: center;
+   box-shadow: 0 0 8px 8px white inset; color: #fff;"
+   >
+    <h1>Bamberg klingt bunt</h1>
+    <section class="trenner">
+      <p>
+        Wohnst du in Bamberg? Dann kennst du deine Stadt bestimmt ganz gut. In dieser Data Story wirst du noch mehr über
+        die Bamberger*innen
+        erfahren und dafür mehrere deiner Sinne nutzen. <br><br>
+        <span style="font-style: italic;">Diese Story funktioniert nämlich sowohl visuell als auch auf der
+          Audio-Ebene.</span>
+      </p>
+    </section>
+    <p>Scrolle, um weiter zu lesen </p>
+    <p>&#x25BC</p>
+  </section>
+
+
+
+
+
+  <!--  Intro -->
+
+  <section class="hidden text_item">
+    <section class="trenner">
+      <p>
+        Fangen wir langsam an. Sich eine ganze Stadtbevölkerung vorzustellen ist schwierig.
+        Deshalb wollen wir uns Stück für Stück ein gedankliches Bild aufbauen.<br><br>
+        <span style="font-style: italic;">Dieses Element steht für 1000 Bamberger*innen</span><br><br>
+
+        
+        <svg>
+          <polygon class="hex" points="180,50 160,85 120,85 100,50 120,15 160,15" id="startmelodie"></polygon>
+        </svg>
+
+        <br><br> Klicke darauf, um schon einmal zu hören, wie Bamberg klingt! <br><br>
+        <span style="font-style: italic;">Du kannst die Lautstärke passend für dich einstellen, damit du dieser Story
+          später gut folgen kannst.</span>
+      </p>
+
+    </section>
+
+  </section>
+
+
+
+
+  <!--  statischer Cluster -->
+  <div class="grid-container-static">
+    <div lass="grid-item large">
+      <svg id="initialCluster" width="1500" height="800" class="viz_item"></svg>
+    </div>
+    <div class="grid-item">
+      <section class="text_item hidden">
+        <p>
+          Wir können mit diesen Elementen nun die Bamberger Bevölkerung repräsentieren. <br><br>
+          Unsere Datengrundlage sind dabei die Bamberger Zahlen 2021,
+          die vom Amt für strategische Entwicklung und Konversion veröffentlicht werden. <br><br>
+
+          <a
+            href="https://www.stadt.bamberg.de/B%C3%BCrgerservice/%C3%84mter/Amt-f%C3%BCr-strategische-Entwicklung-und-Konversion/Strategische-Entwicklung/Statistik/Bamberger-Zahlen-2021-Statistisches-Jahrbuch-der-Stadt-Bamberg.php?object=tx,3481.3&ModID=6&FID=3481.1919.1&NavID=1829.289&La=1&kuo=2">
+            Quelle: Bamberger Zahlen 2021</a>
+        </p>
+      </section>
+      <section class="text_item">
+        <p>2021 lebten <span style="font-weight:bold">77.749</span> Menschen in Bamberg. So viele Einwohner*innen zählte
+          die Stadt noch nie. <br><br>
+          Schauen wir uns diese Menschen genauer an, um die Bamberger Bevölkerungsstruktur besser zu verstehen. </p>
+      </section>
+
+
+    </div>
+  </div>
+
+  <div class="trenner_item"></div>
+
+
+
+  <!--  Kapitel 1: Geschlecht / Einführung Farbcodierung -->
+
+  <div id="chapter_gender" class="grid-container gender">
+    <div class="grid-item large">
+      <h2 class="title_item">Geschlecht</h2>
+      <!--  Geschlechtscluster zum Erklären -->
+      <svg class="viz_item" id="genderCluster"></svg>
+    </div>
+    <div class="grid-item">
+      <svg class="viz_item" id="genderNoten" width="250" height="250"></svg>
+    </div>
+
+
+    <div class="grid-item">
+      <section class="text_item hidden">
+        <p>
+          Wir wollen nun unser Bamberg-Cluster bunt werden lassen.
+          <br><br>
+
+          <button type="button" id="gender_showColors">Werde bunt!</button> <br><br>
+
+          Im ersten Beispiel steht <span style="color:rgb(244, 86, 191)">pink</span> für Menschen mit weiblichem,
+          <span style="color:#ffa500">orange</span> für Menschen mit männlichem Geschlecht. <br><br>
+          Diverse und non-binäre Geschlechteridentitäten werden aktuell in der statistischen Erfassung nicht
+          berücksichtigt,
+          daher können wir sie auch in unserer Visualisierung nicht darstellen.
+
+
+        </p>
+
+      </section>
+      <section class="text_item hidden">
+        <p>2021 waren etwa <span style="color:orange">49% der Bamberger*innen männlich</span> und <span
+            style="color:rgb(244, 86, 191)">51% weiblich.</span> <br><br>Dieses fast ausgeglichene Verhältnis ist
+          typisch für Populationen. Wenig überraschend also.</p>
+      </section>
+      <section class="text_item hidden">
+        <p>Neben einer Farbe hat jede Gruppe ihren eigenen Ton. Die Notenzeile verrät dir, welche Töne und Farben den
+          Kategorien zugeordnet sind. Wenn du auf die Noten klickst, kannst du den Ton hören.
+        </p>
+
+      </section>
+
+      <section class="text_item hidden">
+        <p>Zusammen ergeben diese Töne eine Melodie. Je mehr Personen in einer Kategorie sind,
+          desto länger ist der zugehörige Ton an der Melodie beteiligt. Klicke auf den Button, um die Datenvertonung zu
+          hören.
+          <br><br>
+          <button type="button" id="genderSound">Anhören</button>
+          <br><br>
+          Weil das Geschlechterverhältnis fast ausgeglichen ist, sind beide Töne quasi gleichzeitig lange zu hören.
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="text_item hidden">
+    <p>Was gibt es noch über die Bamberger*innen zu erfahren? Schauen wir uns weitere Kategorien an. </p>
+  </section>
+
+  <!-- Kapitel 2: Alter -->
+
+  <div id="chapter_age_paint" class="grid-container age">
+    <div class="grid-item large brush-cursor" id="coloring">
+      <h2 class="title_item">Altersgruppen</h2>
+      <!--  Alterscluster zum Anmalen -->
+
+      <svg class="viz_item" id="ageClusterColoring"></svg>
+    </div>
+    <div class="grid-item">
+      <svg class="viz_item" id="ageNoten" width="250" height="250"></svg>
+    </div>
+
+
+    <div class="grid-item">
+      <section class="text_item hidden">
+        <p>Wie alt sind die Bamberger*innen eigentlich? <br><br>
+          Wir berücksichtigen drei Gruppen: <span style="color:#69f9bf">0 bis 25 Jahre</span>,
+          <span style="color:#bf69f9">25 bis 65</span>,
+          sowie Personen, die <span style="color:#f9bf69">über 65 Jahre alt</span> sind.
+        </p>
+      </section>
+      <section class="text_item hidden">
+        <p> Was glaubst du, wie groß die jeweiligen Gruppen sind? Du bist eingeladen zu raten! <br><br>
+          Färbe dafür den Anteil der Elemente ein, den du einer bestimmten Altersgruppe zuordnen würdest. Hovere dafür
+          über die Elemente. Klicke
+          auf die Noten in der Notenzeile, um die Farbe und damit die Kategorie zu ändern. <br><br>
+          Wenn du fertig bist, scrolle weiter, um die Auflösung zu sehen.
+        </p>
+
+      </section>
+
+    </div>
+  </div>
+
+  <div class="text_item"></div>
+
+  <div id="chapter_age_info" class="grid-container age">
+    <div class="grid-item large">
+      <!--  Alterscluster bereits gefärbt für Info -->
+
+      <svg class="viz_item" id="ageClusterInfo"></svg>
+    </div>
+    <div class="grid-item">
+
+      <div class="viz_item">
+        <svg id="ageNotenBalken" width="250" height="250"></svg>
+
+        <label class="switch">
+          <input type="checkbox" id="age_showColors">
+          <span class="slider round"></span>
+        </label>
+        <label for="age_showColors" class="switchLabel">Balkendiagramm</label>
+      </div>
+
+    </div>
+
+
+    <div class="grid-item">
+      <section class="text_item hidden">
+        <p>So sieht die Altersverteilung in Bamberg tatsächlich aus.
+          Wie sie klingt, kannst du nun auch hören. </p>
+        <button type="button" id="ageSound">Anhören</button>
+      </section>
+
+      <section class="text_item hidden">
+        <p>Über die Hälfte der Bamberger*innen ist also <span style="color:#bf69f9">zwischen 25 und 65 Jahre alt.</span>
+          Etwa ein Viertel ist
+          <span style="color:#69f9bf">unter 25</span> und
+          knapp 20% sind <span style="color:#f9bf69">älter als 65.</span>
+        </p>
+      </section>
+      <section class="text_item hidden">
+        <p>Mit dieser Altersverteilung spiegelt Bamberg die bundesweite Altersverteilung ziemlich präzise wider.
+          <br><br>
+          Einzig der Anteil der Senioren über 65 ist um ca. 3% geringer.
+          <br><br>
+          <a href="https://service.destatis.de/bevoelkerungspyramide/">
+            Quelle: Statistisches Bundesamt </a>
+        </p>
+      </section>
+      <section class="text_item hidden">
+        <p>Man könnte annehmen, dass Bamberg als Universitätsstadt einen vergleichsweise großen Anteil junger Menschen
+          vorzuweisen hat. <br><br>
+          Die erhobenen Zahlen bestätigen das nicht. Bamberg liegt mit 23,6% Menschen unter 25 fast exakt im
+          Bundesdurchschnitt von 24%. </p>
+      </section>
+    </div>
+  </div>
+
+  <div class="text_item"></div>
+
+  <!-- Kapitel 3: Herkunft -->
+
+  <div id="chapter_origin_paint" class="grid-container origin">
+
+    <div class="grid-item large ">
+      <h2 class="title_item">Bevölkerungsgruppen</h2>
+      <!-- Herkunftscluster zum Anmalen -->
+
+      <svg id="originClusterColoring" class="viz_item brush-cursor"> </svg>
+
+    </div>
+    <div class="grid-item"> <svg id="originNoten" class="viz_item" width="250" height="250"></svg></div>
+    <div class="grid-item">
+      <section class="text_item hidden">
+        <p>
+          Eine weitere interessante Kategorie ist die Herkunft der Menschen in Bamberg.
+          Sind sie also in Deutschland geboren oder aus einem anderen Land hierhergekommen? <br><br>
+      </section>
+      <section class="text_item hidden">
+        <p>
+          Wir unterteilen zwischen Menschen, die <span style="color:#ffec61">in Deutschland geboren </span>sind,
+          <span style="color:#61c3ff">Ausländer*innen</span>,
+          die einen festen Wohnsitz in Bamberg haben, und <span style="color:#ff6174">Personen, die im ANKER-Zentrum
+            leben</span> und damit einen
+          Geflüchteten-Status haben. <br><br>
+
+          Was meinst du? Du bist wieder eingeladen, mit dem Mal-Tool zu raten.Scrolle weiter, um das Ergebnis zu sehen.
+        </p>
+
+      </section>
+
+    </div>
+  </div>
+
+  <div class="text_item"></div>
+
+  <div id="chapter_origin_info" class="grid-container origin">
+
+    <div class="grid-item large">
+
+      <!-- Herkunftscluster mit Info-->
+
+      <svg id="originClusterInfo" class="viz_item"> </svg>
+
+    </div>
+    <div class="grid-item">
+      <div class="viz_item">
+        <svg id="originNotenBalken" width="250" height="250"></svg>
+        <label class="switch">
+          <input type="checkbox" id="origin_showColors">
+          <span class="slider round"></span>
+        </label>
+        <label for="origin_showColors" class="switchLabel">Balkendiagramm</label>
+      </div>
+    </div>
+
+
+    <div class="grid-item">
+
+      <section class="text_item hidden">
+        <p>Und so sieht es wirklich aus: Der mit Abstand größte Anteil der Bamberger*innen ist
+          <span style="color:#ffec61">in Deutschland geboren: Es sind ca. 82%.</span> <br><br>
+
+          <button type="button" id="originSound">Anhören</button> <br><br>
+
+          Es ergibt sich also ein Ausländer*innenanteil von 18%. Damit liegt Bamberg ca. 4% über dem bundesweiten
+          Anteil. <br><br>
+
+          <a
+            href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Tabellen/rohdaten-auslaendische-bevoelkerung-zeitreihe.html">
+            Quelle: Statistisches Bundesamt </a>
+        </p>
+      </section>
+      <section class="text_item hidden">
+
+
+        Die größte Gruppe macht dabei die Türkei mit ca. 7% der Ausländer*innen, aus.
+        Weitere häufige Herkunftsländer sind Griechenland und Italien.
+
+        <br><br>
+
+        Ob es noch größere Gruppen aus anderen Ländern gibt, ist schwer zu sagen, weil nur zu einigen wenigen Ländern Daten erhoben werden.
+      </section>
+
+
+    </div>
+  </div>
+
+
+  <!-- personal chord / buttons section -->
+  <section>
+    <section class="text_item hidden">
+      <section class="trenner">
+        <p>
+          Du bist am Ende dieser Data Story angelangt. Du hast einen Eindruck von der Bamberger Bevölkerungsstruktur
+          bekommen und mehr über die Bamberger*innen erfahren.
+          Dabei haben wir zu jeder Kategorie Töne aus den Melodien eingesammelt. <br><br>
+          Wenn du willst, kannst du dir jetzt noch deine eigene Bamberger Melodie bauen.
+          Wähle für jede Kategorie aus, zu welcher Gruppe du gehörst und höre deinen persönlichen Akkord! Oder höre dir
+          andere Kombination an.
+        </p>
+
+      </section>
+
+    </section>
+
+
+    <table>
+      <tr>
+        <th>Dein Geschlecht</th>
+        <th>Dein Alter</th>
+        <th>Bevölkerungsgruppe</th>
+
+      </tr>
+      <tr>
+        <td>
+          <button class="category-button" id="geschlecht-button">Bitte wählen</button>
+          <div id="personal_gender_viz"></div>
+        </td>
+        <td>
+          <button class="category-button" id="alter-button">Bitte wählen</button>
+          <div id="personal_age_viz"></div>
+        </td>
+        <td>
+          <button class="category-button" id="bevölkerungsgruppe-button">Bitte wählen</button>
+          <div id="personal_origin_viz"></div>
+        </td>
+
+      </tr>
+    </table>
+
+    <button id="akkord-button">Akkord erzeugen</button>
+    
+    <section id="abschluss">
+      <div class="text_item"> <p> Diese Datenstory entstand im Rahmen eines Projekts am Lehrstuhl für Informationsvisualisierung der Universität Bamberg. 
+       <br>  &#169; Dorde Pavlovic, Eva-Maria Haimerl, Alina Shynkarenko, Sophia Mittelbach
+      </p></div>
+    </section>
+    
+   
+    <script src="intersectionObserver.js" defer></script>
+    <script src="personalButtons.js" defer></script>
+    <script src="personalViz.js" defer></script>
+   
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,296 @@
+body {
+    margin-left: 30px;
+  }
+
+  .brush-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg fill="red" height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-9.8 -9.8 509.60 509.60" xml:space="preserve" stroke="red" stroke-width="8"><g id="SVGRepo_iconCarrier"> <path d="M299.62,101.406c-27.864,30.66-49.7,64.323-88.794,125.993c-11.874,18.73-25.392,40.057-41.238,64.65l-44.3,47.743 c-44.625,0-70.781,40.549-68.319,78.074C59.953,463.311,0,485.493,0,485.493S40.941,490,53.934,490c0.01,0,0.01,0,0.01,0 c26.885,0,62.857-4.224,81.525-24.339c15.415-16.612,24.959-37.878,27.624-60.615l56.05-60.402 c22.774-17.037,42.53-31.579,59.885-44.352c57.289-42.178,88.844-65.411,117.034-95.784C482,111.918,490,0,490,0 S384.667,7.826,299.62,101.406z M121.277,451.195c-10.286,11.087-32.444,17.43-62.683,18.017 c10.103-11.929,20.085-29.592,18.136-52.764c-1.479-17.582,8.082-50.473,43.87-55.738l23.27,25.068 C145.483,410.195,137.343,433.874,121.277,451.195z M162.423,376.005l-21.567-23.236l36.452-39.277l21.567,23.24L162.423,376.005z M381.87,190.042c-26.895,28.983-57.917,51.817-114.22,93.271c-15.796,11.625-33.564,24.707-53.798,39.802l-23.84-25.695 c14.163-22.034,26.421-41.372,37.306-58.544c38.438-60.636,59.609-94.036,86.494-123.004 c41.928-45.187,94.083-76.029,151.565-89.801C452.616,88.286,423.923,144.723,381.87,190.042z"></path> </g></svg>'), auto;
+   }
+  svg {
+    
+    margin-left: 20px;
+    margin-bottom: 20px;
+    position: sticky;
+  
+  }
+
+  .title {
+    position: absolute;
+    pointer-events: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 12px;
+    font-family: Arial;
+  }
+  
+
+  .hexagon{
+    fill: black;
+    stroke: black;
+  }
+
+  .hexagonFemale{
+    fill: rgb(244, 86, 191);
+   
+  }
+
+  .hexagonMale{
+    fill: orange;
+
+  }
+
+  .hexagon25 {
+    fill: #69f9bf;
+    stroke: white;
+    stroke-width: 2px;
+   
+  
+  }
+
+  .hexagon65 {
+    fill: #bf69f9;
+    stroke: white;
+    stroke-width: 2px;
+  }
+
+  .hexagonOver65 {
+    fill: #f9bf69;
+    stroke: white;
+    stroke-width: 2px;
+  }
+
+  .hexagonDE {
+    fill:  #ffec61;
+    stroke: white;
+    stroke-width: 2px;
+   }
+
+  .hexagonAusland {
+    fill: #61c3ff;
+    stroke: white;
+    stroke-width: 2px;
+  }
+
+  .hexagonAnker {
+    fill: #ff6174;
+    stroke: white;
+    stroke-width: 2px;
+  }
+
+  button {
+  position: relative;
+  padding: 10px 10px;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: #dddddd;
+  color: rgb(56, 55, 55);
+  cursor: pointer;
+  margin-right: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 5px #dbd9d9;
+  border: 0;
+
+}
+
+.li:hover {
+background-color: #f2f2f2;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  
+  padding: 8px;
+  text-align: center;
+}
+
+.category-button {
+  cursor: pointer;
+}
+.button{
+  cursor: grab;
+}
+
+.selected-category {
+  font-weight: bold;
+}
+
+#akkord-button {
+  margin-top: 20px;
+  padding: 10px;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+body {
+  margin: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #222222;
+  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 60% 15% 15%; 
+  grid-gap: 2%;
+  
+  
+
+}
+
+
+.text_item {
+  
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 20px;
+  min-height: 60vh;
+  text-align: left;
+  text-align-last: none;
+  padding-bottom: 200px;
+
+}
+
+
+.viz_item {
+  position: sticky;
+  top: 10%;
+  padding-bottom: 30px;
+  margin-left: 10;
+  
+}
+
+.title_item {
+  position: sticky;
+  top: 20px;
+  
+
+}
+
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.3s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+}
+
+#intro {
+  width: 30em;
+  text-align: center;
+}
+
+
+a {
+  font-size: smaller;
+}
+
+.trenner {
+  width: 30vw;
+}
+
+.grid-container-static {
+  display: grid;
+  grid-template-columns: 50vw 30vw;
+  gap: 10%
+}
+
+.trenner_item {
+  min-height: 40vh;
+}
+
+#akkord-button {
+  margin: 100px;
+}
+
+#titel {
+  color: whitesmoke;
+  
+}
+
+
+ 
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+.switchLabel {
+
+  font-size: small;
+  
+}
+
+text {
+  font-size: large;
+}
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GOTO MARS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="eventhandling.js" defer> </script>
+    <script src="countdown.js" defer> </script>
+    <script src="filters.js" defer> </script>
+</head>
+
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo from GOTO MARS">
+    </header>
+
+    <main>
+        <div class="filtering" id="launch" >
+
+
+
+            <label for="launches">Launch Site</label>
+            
+            <select id="launches">
+
+                <option class="filterButton" id="noSites" value="none">None</option>
+
+                <option class="filterButton" id="aurora" value="aurora">Aurora Spaceport</option>
+
+                <option class="filterButton" id="eternis" value="eternis">Eternis Terminal</option>
+
+                <option class="filterButton" id= "olympus" value="olympus">Olympus Spaceport</option>
+
+                <option class="filterButton" id="outlander" value="outlander">Outlander Spaceport</option>
+
+            </select>
+	</div>
+
+
+	<div class="filtering" id="sorts">
+
+            <label for="sort">Sort by</label>
+            
+            <select id="sort">
+
+                <option class="sortButton" id="noPriceDate" value="none">None</option>
+
+                <option class="sortButton" id="date" value="date">Date</option>
+
+                <option class="sortButton" id="price" value="price">Price</option>
+
+            </select>
+
+        </div>
+
+        <div id="countdown">
+            <span id="location"></span>
+            <table id="countdownTable">
+                <tr id="time">
+                    <th id="days"></th>
+                    <th id="hours"></th>
+                    <th id="minutes"></th>
+                    <th id="seconds"></th>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>S</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="jsondata"> </div>
+
+        <div id="loading"> </div>
+
+        <div id="errormessage"> </div>
+
+    </main>
+
+    <footer>
+        <p>
+            GOTO MARS GmbH
+            Marsmännchenstraße 42
+            4200 Venussen
+
+            <b>Tel:</b> 12345678
+            <b>E-Mail:</b> info@GOTOMARS.com
+        </p>
+        <p>©Copyright 2023 by GOTOMARS. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
