@@ -1,6 +1,6 @@
 ---
 title: University Projects 
-
+---
 
 Here are some of the cool things I’ve built:
 
