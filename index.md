@@ -4,7 +4,7 @@ title: University Projects
 
 Here are some of the cool things I’ve built:
 
-- [Project A](./newCluster)
+- ["Bamberg klingt bunt" - eine interaktive audiovisuelle Data Story ](./newCluster)
 - [Project B](./TL02)
 
 ---
