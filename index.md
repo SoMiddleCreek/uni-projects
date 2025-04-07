@@ -2,7 +2,7 @@
 title: Projects 
 ---
 
-[Master's Thesis *Context-Aware Explanations for Mobility Data Analysis*](./blogpost)
+[Master's Thesis *Context-Aware Explanations for Mobility Data Analysis*](./ma-post)
 
 [Bachelor's Thesis *Depth of Processing in the Reception of Political News Posts on Instagram - An Analysis of Possible Influencing Factors.*](./ba-post)
 
