@@ -96,7 +96,7 @@ const z = d3.scaleLinear().domain([210, 1100]).range([5, 30]);
 //fetch the data
 async function fetchJsonData() {
   try {
-    const response = await fetch(data.json);
+    const response = await fetch("data.json");
     const data = await response.json();
     return data;
     // Fehlerbehandlung
