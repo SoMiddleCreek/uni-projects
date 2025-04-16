@@ -9,7 +9,7 @@ title: University Projects
 
 ## University Group Projects
 
-- ["Bamberg klingt bunt" - eine interaktive audiovisuelle Data Story ](./newCluster)
+- ["Bamberg klingt bunt" - eine interaktive audiovisuelle Data Story ](./bamberg-klingt-bunt)
 - [Simple Data Visualization with d3](./TL03) (subtask from the module "Web Technologies)
 
 
