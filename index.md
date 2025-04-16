@@ -1,5 +1,5 @@
 ---
-title: University Projects
+title: Theses and University Projects
 ---
 ## Theses
 
