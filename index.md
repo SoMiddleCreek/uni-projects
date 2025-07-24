@@ -14,5 +14,5 @@ title: Theses and University Projects
 
 ## Personal Projects
 
--[simple webpage to display bike tours](./antonias_birthdaytour/)
+- [simple webpage to display bike tours](./antonias_birthdaytour)
 ---
