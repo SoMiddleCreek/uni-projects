@@ -146,6 +146,7 @@ li, #menu_links{
 .highlight {
   background-color: var(--highlight-color);
   color: var(--background-color);
+
   padding: 1%;
   border-radius: 3px;
 }
